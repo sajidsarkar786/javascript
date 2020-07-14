@@ -1,0 +1,106 @@
+Q1)
+<!DOCTYPE html>
+  <html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript current day and time</title>
+        <script>
+            var presentDay = new Date();
+            var day = presentDay.getDay();
+            var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+            var hour = presentDay.getHours();
+            var minute = presentDay.getMinutes();
+            var second = presentDay.getSeconds();
+            var prepand = (hour >= 12)? " PM ":" AM ";
+            hour = (hour >= 12)? hour - 12: hour;
+            if (hour===0 && prepand===' PM ') 
+             {
+                 if (minute===0 && second===0)
+                    { 
+                        hour=12;
+                        prepand='Noon';
+                    } 
+                    else
+                        { 
+                            hour=12;
+                            prepand=' PM';
+                        } 
+             } 
+            if (hour===0 && prepand===' AM ') 
+            { 
+                if (minute===0 && second===0)
+                { 
+                    hour=12;
+                    prepand=' Midnight';
+                } 
+                else
+                { 
+                    hour=12;
+                    prepand=' AM';
+                } 
+            }
+            document.write("Today is : " + daylist[day] + ".");
+            document.write("<br>");
+            document.write("Current Time : "+hour + prepand + " : " + minute + " : " + second);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+============================================================================
+Q3
+============================================================================
+<!DOCTYPE html>
+  <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Write a JavaScript program to get the current date.</title>
+        <script>
+            var today = new Date();
+            var dd = today.getDate();
+
+            var mm = today.getMonth()+1; 
+            var yyyy = today.getFullYear();
+            if(dd<10) 
+            {
+                dd='0'+dd;
+            } 
+
+            if(mm<10) 
+            {
+                mm='0'+mm;
+            } 
+            today = mm+'-'+dd+'-'+yyyy;
+            document.write(today);
+            document.write("<br>")
+            today = mm+'/'+dd+'/'+yyyy;
+            document.write(today);
+        </script>
+    </head>
+  <body>
+  </body>
+  </html>
+
+  ===================================================================================
+Q2
+=====================================================================================
+  <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Print the current page.</title>
+        <script>
+            function print_this_page()
+            {
+                window.print();
+            }
+        </script>
+    </head>
+    <body>
+        <p></p>
+        <p>Click the button to print the current page.</p>
+        <button onclick="print_this_page()">Print this page</button>
+    </body>
+</html>
